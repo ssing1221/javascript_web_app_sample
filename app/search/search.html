@@ -1,0 +1,95 @@
+<!-- Search header section -->
+<section id="searchHdrSect" style="padding-top: 110px;">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h2>{{label.SEARCH_HERE}}</h2>
+				<hr class="star-primary">
+				<div class="alert fade in alert-{{alert.type}}" ng-repeat="alert in vm.alerts">
+					<p>{{alert.msg}}</p>
+				</div>
+				<form name="searchEntryForm" id="searchEntryForm" novalidate ng-submit="vm.searchEntry();">
+					<div class="row control-group">
+						<div class="form-group col-xs-12 floating-label-form-group controls">
+							<label>{{label.MOTTO_SECTENCE_WORD}}</label> <input rows="5" class="form-control"
+								ng-model="vm.inputEntry.content" placeholder="{{label.MOTTO_SECTENCE_WORD}}" id="content" name="content"
+								data-validation-required-message="{{label.PLZ_ENTER_MOTTO_SECTENCE_WORD}}"></input>
+							<p class="help-block text-danger" />
+						</div>
+					</div>
+					<div class="row control-group">
+						<div class="form-group col-xs-12 floating-label-form-group controls">
+							<label>{{label.TAG}}</label> <input type="text" class="form-control" ng-model="vm.inputEntry.tag"
+								placeholder="{{label.TAG}}" id="source" name="tag" />
+							<p class="help-block text-danger" />
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="form-group col-xs-12">
+							<button type="button" class="btn btn-lg pull-left btn-danger" ng-click="vm.clearSearchEntryForm();">{{label.CLEAR}}</button>
+							<button id="searchBtn" type="submit" class="btn btn-info btn-lg pull-right" >{{label.SEARCH}}</button>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="form-group col-md-12" style="text-align: left; vertical-align: middle;">
+							<label>{{label.POPULAR_TAG}}</label> 
+							<label>:</label> 
+							<button type="button" class="btn btn-sm btn-warning btn-space" ng-click="vm.searchByTag('joke');">{{label.JOKE}}</button>
+							<button type="button" class="btn btn-sm btn-warning btn-space" ng-click="vm.searchByTag('motto');">{{label.MOTTO}}</button>
+							<button type="button" class="btn btn-sm btn-warning btn-space" ng-click="vm.searchByTag('love');">{{label.LOVE}}</button>
+							<button type="button" class="btn btn-sm btn-warning btn-space" ng-click="vm.searchByTag('sad');">{{label.SAD}}</button>
+							<button type="button" class="btn btn-sm btn-warning btn-space" ng-click="vm.searchByTag('english');">{{label.ENGLISH}}</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<!-- Result Section -->
+<section class="success" id="resultSect">
+	<div id="resultEntriesDiv" class="container" ng-if="vm.disableSearch">
+
+		<div ng-if="!vm.isAuth" class="motto" infinite-scroll-distance="0" infinite-scroll-disabled="vm.disableLoadMore"
+			infinite-scroll-immediate-check="false" infinite-scroll="vm.loadMoreSearchEntry();">
+			<blockquote ng-repeat="entry in vm.entries" style="margin-top: 65px;">
+				<p ng-bind-html="entry.content"></p>
+				<footer>
+					<p>{{entry.source}}</p>
+				</footer>
+				<tags-input class="disableTags alert-warning" ng-model="entry.tags" ng-disabled="true"></tags-input>
+			</blockquote>
+		</div>
+		
+		<!-- login -->
+		<table ng-if="vm.isAuth" class="table table-bordered table-condensed">
+			<tr ng-repeat="entry in vm.entries">
+			 	<td>
+			        <textarea rows="5" class="form-control" ng-model="entry.content"
+								placeholder="{{label.MOTTO_SECTENCE_WORD}}" id="content" name="content" required
+								data-validation-required-message="{{label.PLZ_ENTER_MOTTO_SECTENCE_WORD}}"></textarea>
+			        <textarea rows="1" class="form-control" ng-model="entry.source"
+								placeholder="{{label.SOURCE}}" id="source" name="source" ></textarea>
+					<tags-input style="color: black;" placeholder="{{label.ADD_TAGS}}" ng-model="entry.tags" min-length="1"></tags-input>
+			    </td>
+
+				<td>
+			        <!-- form -->
+			        <form name="editEntryForm" id="editEntryForm" novalidate ng-submit="vm.updateEntry(entry);">
+			          <button type="submit" class="btn btn-info btn-lg " >save</button>
+			        </form>
+			     </td>
+			</tr>
+		</table>
+		
+		<img ng-if="!vm.isAuth" ng-hide="vm.loadMoreEnd" class="img-responsive center-block" style="" src="app-content/img/ajax-loader.gif"
+			width="50" height="50">
+		<h2 ng-show="vm.loadMoreEnd" class="text-center">{{label.END}}</h2>
+
+	</div>
+</section>
+

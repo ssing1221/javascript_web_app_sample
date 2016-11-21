@@ -1,0 +1,35 @@
+<!-- Pending Section -->
+<section class="success" id="pendingSect" style="padding-top: 120px;">
+
+	<form name="pendingEntryForm" id="pendingEntryForm" novalidate>
+		<div ng-if="vm.isAuth" id="pendingEntriesDiv" class="container">
+		
+			<div class="">
+				<p>{{label.TOTAL_VISIT}}: {{vm.totNum}}</p>
+			</div>
+			
+			<div class="alert fade in alert-{{alert.type}}" ng-repeat="alert in vm.alerts">
+				<p>{{alert.msg}}</p>
+			</div>
+			<button class="btn btn-lg btn-warning pull-right fa fa-sign-out" ng-click="vm.userLogout();">{{label.LOGOUT}}</button>
+			<button class="btn btn-lg btn-info pull-left fa fa-check" ng-click="vm.approvalAllEntry();">{{label.ALL}}</button>
+			<div class="motto">
+				<blockquote ng-repeat="entry in vm.pendingEntries" style="margin-top: 65px;">
+					<p ng-bind-html="entry.content"></p>
+					<footer>
+						<p>{{entry.source}}</p>
+					</footer>
+					<tags-input class="disableTags alert-warning" ng-model="entry.tags" ng-disabled="true"></tags-input>
+
+					<button class="btn btn-lg btn-danger pull-right fa fa-times" ng-click="vm.rejectEntry(entry);"></button>
+					<button class="btn btn-lg btn-info pull-right fa fa-check" ng-click="vm.approvalEntry(entry);"></button>
+					<hr>
+				</blockquote>
+			</div>
+		</div>
+	</form>
+
+	<h2 class="text-center">{{label.END}}</h2>
+
+</section>
+

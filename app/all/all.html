@@ -1,0 +1,25 @@
+<!-- All Section -->
+<section class="success" id="allSect">
+	<div id="allEntriesDiv" class="container">
+
+		<div class="motto" infinite-scroll-distance="0"
+			infinite-scroll-disabled="vm.disableLoadMore"
+			infinite-scroll-immediate-check="false"
+			infinite-scroll="vm.loadMoreEntryAll();">
+			<blockquote ng-repeat="entry in vm.entries" style="margin-top: 65px;">
+				<p ng-bind-html="entry.content"></p>
+				<footer>
+					<p>{{entry.source}}</p>
+				</footer>
+				<tags-input class="disableTags alert-warning"
+					ng-model="entry.tags" ng-disabled="true"></tags-input>
+			</blockquote>
+
+		</div>
+		<img ng-show="!vm.loadMoreEnd" class="img-responsive center-block" style="" src="app-content/img/ajax-loader.gif"
+			width="50" height="50">
+		<h2 ng-show="vm.loadMoreEnd" class="text-center">{{label.END}}</h2>
+
+	</div>
+</section>
+

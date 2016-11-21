@@ -1,0 +1,58 @@
+{  
+	
+    "TITLE": "左右名",
+    "HOME": "主頁",
+    "ALL": "全部",
+    "LOGIN": "登入",
+    "LOGOUT": "登出",
+    "EN": "ENG",
+    "ZH": "繁",
+    "FIND_ME_ON": "找我",
+    "SINCE_2005": "自 2005年",
+    
+    "USERNAME": "用戶名稱",
+    "PASSWORD": "密碼",
+    "LOGIN_HERE": "在這裡登入!",
+    "PLZ_ENTER_USERNAME": "請輸入用戶名稱",
+    "PLZ_ENTER_PASSWORD": "請輸入密碼",
+    "USERNAME_PASSWORD_INCORRECT": "用戶名稱或密碼不正確",
+    
+    "END": "完",
+    
+    "ABOUT": "關於",
+    "ABOUT_1": "以最簡單的方法，去看座右銘 / 句子 / 詞彙。你會有意想不到的發現！",
+    "ABOUT_2": "我們提供隨機的座右銘 / 句子 / 詞彙 。同時，你也可以張貼自己的想法或發現！",
+    "TOTAL_ENTRY": "總數量",
+    
+    "MAIN_ENTRY": "座右銘 / 句子 / 詞彙",
+    "AGAIN": "再來",
+    
+    "POST_HERE": "在這裡發表!",
+    "SEARCH_HERE": "在這裡搜尋!",
+    "MOTTO_SECTENCE_WORD": "座右銘/句子/詞彙",
+    "PLZ_ENTER_MOTTO_SECTENCE_WORD": "請輸入座右銘 / 句子 / 詞彙",
+    "SOURCE": "來源",
+    "PLZ_ENTER_SOURCE": "請輸入來源",
+    "ADD_TAGS": "加標籤",
+    "POST": "發表",
+    "CLEAR": "清除",
+    "SEARCH": "搜尋",
+    "TAG": "標籤",
+    "ENTER_WORD_OR_TAG": "請輸入詞彙/標籤!",
+    "NOT_FOUND": "找不到",
+    "TOTAL_VISIT": "總瀏覽",
+    "POPULAR_TAG": "熱門標籤",
+    
+    "JOKE": "笑話",
+    "MOTTO": "座右銘",
+    "LOVE": "愛",
+    "SAD": "悲哀",
+    "ENGLISH": "英文",
+    
+    "BACK": "返回",
+    "NO_PREVIOSE_ENTRY": "Sometimes there is no going back. 有時，是沒有回頭路的。",
+    "JYM_MOTTO": "JYM Motto",
+    	
+    "SUCCESSFULLY_POSTED": "發表成功!",
+    "OOPS": "Oops. 發生問題. 請稍後再試!"
+}

@@ -1,0 +1,7 @@
+{
+	"serverIP": "127.0.0.1",
+	"serverPort": "7001",
+	"connectionString": "mongodb://127.0.0.1:27017/jymDB",
+    "apiUrl": "http://127.0.0.1:3100/api",
+    "secret": "REPLACE THIS WITH YOUR OWN SECRET, IT CAN BE ANY STRING"
+}

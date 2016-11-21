@@ -1,0 +1,59 @@
+{  
+    
+	"TITLE": "JYM Motto",
+    "HOME": "Home",
+    "ALL": "All",
+    "LOGIN": "Login",
+    "LOGOUT": "Logout",
+    "EN": "ENG",
+    "ZH": "繁",
+    "FIND_ME_ON": "Find me on",
+    "SINCE_2005": "since 2005",
+    
+    "USERNAME": "Username",
+    "PASSWORD": "Password",
+    "LOGIN_HERE": "Login here!",
+    "PLZ_ENTER_USERNAME": "Please enter username",
+    "PLZ_ENTER_PASSWORD": "Please enter password",
+    "USERNAME_PASSWORD_INCORRECT": "Username or password is incorrect",
+    "ACCOUNT_LOCKED": "Account was locked!",
+    
+    "END": "End",
+    
+    "ABOUT": "About",
+    "ABOUT_1": "This is a motto system for reading motto, sentence, word in the easiest way. You will get more fun and enlightenment than you bargained for!",
+    "ABOUT_2": "We provide random motto / sentence / word for you. Also you can submit your thought or finding which may surprise us!",
+    "TOTAL_ENTRY": "Total entry",
+    
+    "MAIN_ENTRY": "Motto / Sentence / Word",
+    "AGAIN": "Again",
+    	
+    "POST_HERE": "Post it here!",
+    "SEARCH_HERE": "Search it here!",
+    "MOTTO_SECTENCE_WORD": "Motto/Sentence/Word",
+    "PLZ_ENTER_MOTTO_SECTENCE_WORD": "Please enter Motto/Sentence/Word",
+    "SOURCE": "Scoure",
+    "PLZ_ENTER_SOURCE": "Please enter Scoure",
+    "ADD_TAGS": "Add tags",
+    "POST": "Post",
+    "CLEAR": "Clear",
+    "SEARCH": "Search",
+    "TAG": "Tag",
+    "ENTER_WORD_OR_TAG": "Please enter word(s) or tag(s) for searching.",
+    "NOT_FOUND": "Not found.",
+    "TOTAL_VISIT": "Total visit",
+    "POPULAR_TAG": "Popular tag",
+    
+    "JOKE": "Joke",
+    "MOTTO": "Motto",
+    "LOVE": "Love",
+    "SAD": "Sad",
+    "ENGLISH": "English",
+    
+    "BACK": "Back",
+    "NO_PREVIOSE_ENTRY": "Sometimes there is no going back. 有時，是沒有回頭路的。",
+    "JYM_MOTTO": "JYM Motto",
+    
+    "SUCCESSFULLY_POSTED": "Successfully posted!",
+    "OOPS": "Oops. Something went wrong. Please try again later."
+}

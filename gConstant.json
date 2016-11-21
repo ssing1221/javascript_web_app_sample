@@ -1,0 +1,10 @@
+{
+    "g_entryPerPage": 5,
+    "g_status_success": "S",
+    "g_status_pending": "P",
+    "g_status_active": "A",
+    "g_status_delete": "D",
+    "g_locked": "locked",
+    "g_max_try": 5
+
+}

@@ -1,0 +1,119 @@
+
+<!-- Header -->
+<header>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+
+				<div class="intro-text">
+					<span class="name">{{label.MAIN_ENTRY}}</span>
+					<span><em>{{label.SINCE_2005}}</em></span>
+					<hr class="star-light">
+					<span class="motto">
+						
+						<blockquote>
+							<p id="randomEntry" ng-bind-html="vm.randomEntry.content"></p>
+							<footer>
+								<p>{{vm.randomEntry.source}}</p>
+							</footer>
+							<tags-input class="disableTags alert-warning" ng-model="vm.randomEntry.tags" ng-disabled="true"></tags-input>
+							<!-- <button class="btn btn-success btn-xs" data-clipboard-target="#randomEntry">
+								<i class="fa fa-clipboard" aria-hidden="true"></i>
+							</button> -->
+						</blockquote>
+					</span>
+				</div>
+
+				<div class="row">
+					<div class="form-group col-xs-12">
+						<button id="backBtn" ng-click="vm.getPrevEntry(); " ng-show="vm.prevEntry" onclick=" window.scrollTo(0, 0);" class="btn btn-danger btn-lg btn-space">{{label.BACK}}</button>
+						<button id="againBtn" ng-click="vm.getRandomEntry(); " onclick=" window.scrollTo(0, 0);" class="btn btn-success btn-lg btn-space">{{label.AGAIN}}</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</header>
+
+<!-- Post Section -->
+<section id="postSect">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h2>{{label.POST_HERE}}</h2>
+				<hr class="star-primary">
+				<div class="alert fade in alert-{{alert.type}}" ng-repeat="alert in vm.alerts">
+					<p>{{alert.msg}}</p>
+				</div>
+				<form name="postEntryForm" id="postEntryForm" novalidate ng-submit="vm.createEntry();">
+					<div class="row control-group">
+						<div class="form-group col-xs-12 floating-label-form-group controls">
+							<label>{{label.MOTTO_SECTENCE_WORD}}</label>
+							<textarea rows="5" class="form-control" ng-model="vm.inputEntry.content"
+								placeholder="{{label.MOTTO_SECTENCE_WORD}}" id="content" name="content" required
+								data-validation-required-message="{{label.PLZ_ENTER_MOTTO_SECTENCE_WORD}}"></textarea>
+							<p class="help-block text-danger"></p>
+						</div>
+					</div>
+					<div class="row control-group">
+						<div class="form-group col-xs-12 floating-label-form-group controls">
+							<label>{{label.SOURCE}}</label> <input type="text" class="form-control" ng-model="vm.inputEntry.source"
+								placeholder="{{label.SOURCE}}" id="source" name="source" required>
+							<p class="help-block text-danger"></p>
+						</div>
+					</div>
+					<div class="row control-group">
+						<div class="form-group col-xs-12 floating-label-form-group controls tagsColorToWhite">
+							<tags-input placeholder="{{label.ADD_TAGS}}" ng-model="vm.inputEntry.tags" min-length="1"></tags-input>
+						</div>
+					</div>
+					<br>
+					<div ng-if="!vm.isAuth" class="row control-group g-recaptcha">
+						<div vc-recaptcha key="vm.recaptcha_public_key" ng-model="vm.loginRecaptchaResp"></div>
+					</div>
+					<br>
+					<div id="success"></div>
+					<div class="row">
+						<div class="form-group col-xs-12">
+							<button type="button" class="btn btn-lg pull-left btn-danger" ng-click="vm.clearPostEntryForm();">{{label.CLEAR}}</button>
+							<button type="submit" class="btn btn-info btn-lg pull-right"
+								ng-disabled="postEntryForm.source.$invalid || postEntryForm.content.$invalid || (vm.loginRecaptchaResp == null && !vm.isAuth)">{{label.POST}}</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="row"></div>
+	</div>
+</section>
+
+<!-- About Section -->
+<section class="success" id="about">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h2>{{label.ABOUT}}</h2>
+				<hr class="star-light">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-4 col-lg-offset-2">
+				<p>{{label.ABOUT_1}}</p>
+			</div>
+			<div class="col-lg-4">
+				<p>{{label.ABOUT_2}}</p>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<hr class="star-light">
+				<p>{{label.TOTAL_ENTRY}}: <strong>{{vm.totActiveEntry}}</strong></p>
+				<span><em>{{label.SINCE_2005}}</em></span>
+			</div>
+		</div>
+	</div>
+</section>
+
