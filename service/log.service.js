@@ -20,9 +20,10 @@ function visitLog(visitLogOjb) {
 	var deferred = Q.defer();
 
 	db.logs.insert(visitLogOjb, function(err, doc) {
-		if (err)
+		if (err){
+			console.log('err: '+err);
 			deferred.reject(err);
-
+		}
 		deferred.resolve();
 	});
 

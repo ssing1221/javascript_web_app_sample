@@ -36,6 +36,12 @@
 			vm.nextFlag = false;
 			vm.prevEntry = false;
 			vm.nextEntry = false;
+
+			setTimeout(function(){
+				if(!angular.equals(grecaptcha, {})){
+					grecaptcha.reset();
+				}
+			}, 500);
 			
 			userService.isAuthenticate().then(function(result) {
 				vm.isAuth = result.isAuth;
@@ -184,21 +190,27 @@
 			                	vm.inputEntry = null;
 			                	vm.alerts = [{ type: g_alert_type_s, msg: $rootScope.label.SUCCESSFULLY_POSTED }];
 			                	vm.loginRecaptchaResp = null;
-								grecaptcha.reset();
+								if(!angular.equals(grecaptcha, {})){
+									grecaptcha.reset();
+								}
 			                	// Unblock the user interface
 			                    blockUI.stop();
 			                })
 			                .catch(function (error) {
 			                	vm.alerts = [{ type: g_alert_type_d, msg: $rootScope.label.OOPS }];
 			                	vm.loginRecaptchaResp = null;
-								grecaptcha.reset();
+								if(!angular.equals(grecaptcha, {})){
+									grecaptcha.reset();
+								}
 			                	// Unblock the user interface
 			                    blockUI.stop();
 			                });
 						}else{
 							vm.alerts = [{ type: g_alert_type_d, msg: $rootScope.label.OOPS }];
 							vm.loginRecaptchaResp = null;
-							grecaptcha.reset();
+							if(!angular.equals(grecaptcha, {})){
+								grecaptcha.reset();
+							}
 		                	// Unblock the user interface
 		                    blockUI.stop();
 						}
@@ -210,14 +222,18 @@
 	                	vm.inputEntry = null;
 	                	vm.alerts = [{ type: g_alert_type_s, msg: $rootScope.label.SUCCESSFULLY_POSTED }];
 	                	vm.loginRecaptchaResp = null;
-						grecaptcha.reset();
+						if(!angular.equals(grecaptcha, {})){
+							grecaptcha.reset();
+						}
 	                	// Unblock the user interface
 	                    blockUI.stop();
 	                })
 	                .catch(function (error) {
 	                	vm.alerts = [{ type: g_alert_type_d, msg: $rootScope.label.OOPS }];
 	                	vm.loginRecaptchaResp = null;
-						grecaptcha.reset();
+						if(!angular.equals(grecaptcha, {})){
+							grecaptcha.reset();
+						}
 	                	// Unblock the user interface
 	                    blockUI.stop();
 	                });
@@ -231,7 +247,9 @@
 			vm.inputEntry = null;
 			vm.alerts = null;
 			vm.loginRecaptchaResp = null;
-			grecaptcha.reset();
+			if(!angular.equals(grecaptcha, {})){
+				grecaptcha.reset();
+			}
 		}
 		;
 		

@@ -23,7 +23,11 @@
 			vm.alerts = null;
 			
 			vm.loginRecaptchaResp = null;
-			grecaptcha.reset();
+			setTimeout(function(){
+				if(!angular.equals(grecaptcha, {})){
+					grecaptcha.reset();
+				}
+			}, 500);
 
 			userService.isAuthenticate().then(function(result) {
 				if(result.isAuth){
@@ -46,7 +50,9 @@
 					userService.authenticateUser(vm.user).then(function(token) {
 						$state.go('pending');
 						vm.loginRecaptchaResp = null;
-						grecaptcha.reset();
+						if(!angular.equals(grecaptcha, {})){
+							grecaptcha.reset();
+						}
 						// Unblock the user interface
 		                blockUI.stop();
 					}).catch(function (error) {
@@ -58,21 +64,27 @@
 							vm.alerts = [{ type: g_alert_type_d, msg: $rootScope.label.OOPS }];
 						}
 						vm.loginRecaptchaResp = null;
-						grecaptcha.reset();
+						if(!angular.equals(grecaptcha, {})){
+							grecaptcha.reset();
+						}
 						// Unblock the user interface
 		                blockUI.stop();
 		            });
 				}else{
 					vm.alerts = [{ type: g_alert_type_d, msg: $rootScope.label.OOPS }];
 					vm.loginRecaptchaResp = null;
-					grecaptcha.reset();
+					if(!angular.equals(grecaptcha, {})){
+						grecaptcha.reset();
+					}
 					// Unblock the user interface
 	                blockUI.stop();
 				}
 			}).catch(function (error) {
 				vm.alerts = [{ type: g_alert_type_d, msg: $rootScope.label.OOPS }];
 				vm.loginRecaptchaResp = null;
-				grecaptcha.reset();
+				if(!angular.equals(grecaptcha, {})){
+					grecaptcha.reset();
+				}
 				// Unblock the user interface
                 blockUI.stop();
 			});
@@ -87,7 +99,9 @@
 			vm.alerts = null;
 			
 			vm.loginRecaptchaResp = null;
-			grecaptcha.reset();
+			if(!angular.equals(grecaptcha, {})){
+				grecaptcha.reset();
+			}
 			
 			// Unblock the user interface
             blockUI.stop();
