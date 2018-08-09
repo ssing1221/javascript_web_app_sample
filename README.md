@@ -7,7 +7,7 @@ http://www.jymmotto.com/
 ## System Architecture
 
 ![AngularJS](http://www.zluck.com/wp-content/uploads/2016/11/angularjs-development-logo-uai-258x272.png)
-<img src="http://getbootstrap.com/docs/4.1/assets/brand/bootstrap-social.png" width="50%" height="50%" />
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Boostrap_logo.svg" width="50%" height="50%" />
 
 Front end: AngularJS + Bootstrap
 
